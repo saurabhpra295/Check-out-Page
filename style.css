@@ -81,6 +81,13 @@ html,body {
   justify-content: space-between;
 }
 
+.cancel {
+  position: absolute;
+  right: 60%;
+  bottom: 12.5%;
+  
+}
+
 .checkout {
   position: absolute;
   bottom: 10%;
@@ -89,15 +96,52 @@ html,body {
 
 .checkout > button {
   padding: 20px 60px;
-  border-radius: 30px;
+  /* border-radius: 30px; */
   border: 1px solid white;
   color: white;
   background-color: tomato;
+  transition: 0.25s;
 }
 
-.cancel {
-  position: absolute;
-  right: 60%;
-  bottom: 12.5%;
-  
+button:hover {
+  cursor: pointer;
+  background-color: rgb(80, 151, 151);
+
 }
+
+button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 5px;
+  border-bottom: 1px solid rgb(103, 96, 96);
+  background-color: rgb(115, 110, 110);
+  transition: 0.25s;
+}
+
+button:hover::before {
+ width: 100%; 
+
+}
+
+button::after {
+  content: "";
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  width: 5px;
+  height: 0;
+  
+  background-color: rgb(101, 96, 96);
+  transition: 0.25s 0.25s;
+}
+
+button:hover::after {
+  
+  height: 100%;
+ }
+
+
